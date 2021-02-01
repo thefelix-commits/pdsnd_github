@@ -2,13 +2,13 @@
 Project created at 31th of January 2021.
 
 ### Project Title
-Analysis of bikeshare data via python
+Analysis of bikeshare data via python (using python 3.8.5)
 
 ### Description
 Projekt does an analyis of bikeshare data from the cities of Chicago, New York and Washington.
 Data is prvided in csv files. The user is asked to provide city / month which should be analysed and day of the week.
 All month / days can be selected as well.
-Analysis contains top month / days of rental starts. Mean and sum of trip durations and basic customer analysis
+Analysis contains top month / days of rental starts (partly Top 5). Mean and sum of trip durations and basic customer analysis
 (gender, age). Last mentioned data is not avialable to all cities.
 
 ### Files used
@@ -16,3 +16,4 @@ csv data of three cities in "chicago.csv", "new_york_city.csv", "washington.csv"
 
 ### Credits
 csv data provided by udacity.
+Code was written on anaconda, jupiter notebok (6.1.4)
