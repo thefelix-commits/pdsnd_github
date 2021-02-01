@@ -267,9 +267,11 @@ def main():
         print('\nIf you like to check raw data, please press (r).')
         restart = input('Would you like to restart? Enter (y) yes or (n) no.\n')
         if restart.lower() != 'yes' and restart.lower() != 'y' and restart.lower() != 'r':
+            print('Thank you for using this analysis. For feedback do not hesitate to contact us')
             break
         if restart.lower() == 'r':
             show_raw_data(df)
+        
 
 if __name__ == "__main__":
     main()
