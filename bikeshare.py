@@ -222,14 +222,15 @@ def user_stats(dfx):
     except:
         print('Column/data "gender" not included in data of selected city.')
 
-    #Display earliest, most recent, and most common year of birth
+    #Display earliest, most recent, and most common year of birth. Print approx. age
     try:
+    	now = time.gmtime()
         birth = dfx['Birth Year'].min()
-        print('\nBirth (Min.) ' + str(birth)[0:4]) 
+        print('\nBirth (Min.) ' + str(birth)[0:4] + '   (approx. age.: ' + str(now[0] - birth) + ')') 
         birth = dfx['Birth Year'].max()
-        print('Birth (Max.): ' + str(birth)[0:4]) 
+        print('Birth (Max.): ' + str(birth)[0:4] + '   (approx. age.: ' + str(now[0] - birth) + ')') 
         birth = dfx['Birth Year'].mode()[0]
-        print('Birth (Most years occuring in dataset): ' + str(birth)[0:4])
+        print('Birth (Most years occuring in dataset): ' + str(birth)[0:4] + '   (approx. age.: ' + str(now[0] - birth) + ')')
     except:
         print('Column/data "birthdate" not included in data of selected city.')
 
@@ -267,9 +268,11 @@ def main():
         print('\nIf you like to check raw data, please press (r).') #option to see raw data
         restart = input('Would you like to restart? Enter (y) yes or (n) no.\n')
         if restart.lower() != 'yes' and restart.lower() != 'y' and restart.lower() != 'r':
+            print('Thank you for using this analysis. For feedback do not hesitate to contact us')
             break
         if restart.lower() == 'r':
             show_raw_data(df)
+        
 
 if __name__ == "__main__":
     main()
