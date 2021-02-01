@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-#from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt #library not used, as not availabe in web-editor
 
 #Definition of Filters
 CITY_DATAS = { 'c': ['Chicago', 'chicago.csv'],
@@ -58,7 +58,7 @@ def get_filters():
             print('This selection is not available, please use another selection.')
     print('You chose: ' + monthf)
     
-    #Select DAY
+    #Select DAY of Week
     dayf = None
     print()
     print('\nWhich day of the week (1-7) would you like to evaluate? (type 1 - 12 or \'a\' for all).')
@@ -257,14 +257,14 @@ def show_raw_data(dfx):
 def main():
     while True:
         city, month, day = get_filters() #get user input, which datasets should be analysed
-        df = load_data(city, month, day)
+        df = load_data(city, month, day) #load data
 
-        time_stats(df, month, day)
+        time_stats(df, month, day) #statistics
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
 
-        print('\nIf you like to check raw data, please press (r).')
+        print('\nIf you like to check raw data, please press (r).') #option to see raw data
         restart = input('Would you like to restart? Enter (y) yes or (n) no.\n')
         if restart.lower() != 'yes' and restart.lower() != 'y' and restart.lower() != 'r':
             break
